@@ -21,6 +21,8 @@ public class LineParser implements Runnable {
         String tokens[] = message.split(" - - ");
         InetAddress address = null;
 
+        if (tokens.length != 2) throw new IllegalArgumentException("ERROR: File contiene delle righe non valide.\n");
+
         try {
             address = InetAddress.getByAddress(getBytesIP(tokens[0]));
         } catch (UnknownHostException e) {

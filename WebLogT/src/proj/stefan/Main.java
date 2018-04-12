@@ -8,10 +8,10 @@ public class Main {
                 new MessageQueue(25)
         };
 
-        Thread fetcher = new Thread(new LineFetcher("C:\\Users\\Stefan\\IdeaProjects\\WebLogT\\src\\proj\\stefan\\web.log.txt", queues[0]));
+        Thread fetcher = new Thread(new LineFetcher("C:\\Users\\Stefan\\IdeaProjects\\Esercizi RCL\\WebLogT\\src\\proj\\stefan\\web.log.txt", queues[0]));
         fetcher.start();
 
-        Thread saver = new Thread(new LineSaver(queues[1], "C:\\Users\\Stefan\\IdeaProjects\\WebLogT\\src\\proj\\stefan\\web.log.out.txt"));
+        Thread saver = new Thread(new LineSaver(queues[1], "C:\\Users\\Stefan\\IdeaProjects\\Esercizi RCL\\WebLogT\\src\\proj\\stefan\\web.log.out.txt"));
         saver.start();
 
         Thread parsers[] = new Thread[10];
